@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ASPHALTPRO | Панель администратора</title>
+
+  <link rel="stylesheet" href="/index.css" />
+</head>
+
+<body>
+  <header>
+    <a class="brand" href="/">
+      ▲ ASPHALT<span>PRO</span>
+    </a>
+
+    <a class="call" href="/">
+      ← На главную
+    </a>
+  </header>
+
+  <main class="section">
+    <p class="eyebrow">ПАНЕЛЬ УПРАВЛЕНИЯ</p>
+
+    <h1>Заявки клиентов</h1>
+
+    <p class="muted">
+      Здесь отображаются заявки, отправленные клиентами через сайт.
+      Обратите внимание: заявки хранятся в памяти сервера и удаляются
+      после его перезапуска.
+    </p>
+
+    <button class="btn" id="refresh" type="button">
+      Обновить список ↻
+    </button>
+
+    <p id="admin-status" role="status" aria-live="polite"></p>
+
+    <div style="overflow-x: auto; margin-top: 24px;">
+      <table
+        id="table"
+        style="width: 100%; text-align: left; border-collapse: collapse;"
+      >
+        <thead>
+          <tr>
+            <th>Имя клиента</th>
+            <th>Телефон</th>
+            <th>Услуга</th>
+            <th>Описание заявки</th>
+            <th>Дата отправки</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- Заявки загружаются через admin.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <p class="muted" style="margin-top: 24px;">
+      ASPHALTPRO © 2026. Все права защищены.
+    </p>
+  </main>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

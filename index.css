@@ -1,0 +1,543 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Noto+Sans+Armenian:wght@400;600;700;800&display=swap');
+
+:root {
+  --y: #ffd12f;
+  --bg: #0b0e11;
+  --muted: #aab1b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #f5f6f7;
+  font-family: Manrope, 'Noto Sans Armenian', Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  min-height: 78px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #090c0ff2;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #ffffff12;
+}
+
+.brand {
+  font-size: 21px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.brand span,
+h1 span,
+h2 span {
+  color: var(--y);
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  font-size: 13px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--y);
+}
+
+.call {
+  background: var(--y);
+  color: #111;
+  padding: 13px 18px;
+  border-radius: 7px;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+#menu {
+  display: none;
+}
+
+/* Главный экран */
+
+.hero {
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 70px 7%;
+  background: url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=2000&q=85')
+    center / cover;
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      #080c10 0%,
+      #080c10ed 34%,
+      #080c1080 70%,
+      #080c1020
+    ),
+    linear-gradient(0deg, #0b0e11, transparent 25%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 790px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--y);
+  font-weight: 800;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 5vw, 66px);
+  line-height: 1.16;
+  letter-spacing: -2px;
+  margin: 18px 0;
+}
+
+.lead {
+  max-width: 570px;
+  color: #c6cbd0;
+  line-height: 1.9;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 21px;
+  border: 0;
+  border-radius: 7px;
+  background: var(--y);
+  color: #111;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: #ffe06a;
+  transform: translateY(-2px);
+}
+
+.ghost {
+  background: transparent;
+  border: 1px solid #ddd;
+  color: white;
+  margin-left: 8px;
+}
+
+.ghost:hover {
+  background: #ffffff10;
+}
+
+.stats {
+  display: flex;
+  gap: 35px;
+  border-top: 1px solid #ffffff30;
+  padding-top: 22px;
+  margin-top: 42px;
+  font-size: 13px;
+}
+
+.stats small {
+  display: inline-block;
+  color: #aeb5bb;
+  font-size: 10px;
+  margin-top: 7px;
+}
+
+/* Բաժիններ */
+
+.section {
+  padding: 85px 7%;
+}
+
+.center {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  letter-spacing: -1px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Ծառայությունների քարտեր */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.grid article {
+  padding: 26px 22px;
+  border: 1px solid #2a3036;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #151a20, #0d1115);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.grid article:hover {
+  transform: translateY(-5px);
+  border-color: #ffd12f88;
+}
+
+.grid i {
+  font-style: normal;
+  color: var(--y);
+  font-size: 32px;
+}
+
+.grid h3 {
+  font-size: 18px;
+}
+
+.grid p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.grid a {
+  color: var(--y);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* Մեր մասին */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #11161b;
+}
+
+.about-img {
+  min-height: 440px;
+  background: url('https://images.unsplash.com/photo-1580901368919-7738efb0f87e?auto=format&fit=crop&w=1200&q=85')
+    center / cover;
+}
+
+.about > div + div {
+  align-self: center;
+  padding: 55px 9%;
+}
+
+.about li {
+  margin: 14px 0;
+  font-size: 13px;
+}
+
+/* Կապի ձև */
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+  background: #12171c;
+  border: 1px solid #2a3036;
+  border-radius: 10px;
+  padding: 26px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 13px;
+  background: #0b0f13;
+  border: 1px solid #303840;
+  border-radius: 6px;
+  color: white;
+  font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 1px solid var(--y);
+  border-color: var(--y);
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+#status,
+#admin-status {
+  color: var(--y);
+  font-size: 13px;
+}
+
+/* Հեռախոսի կոճակ՝ «Свяжитесь с нами» բաժնում */
+
+.contact-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 16px 24px;
+  border: 1px solid #ffe06a;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ffe06a, #ffd12f);
+  color: #080a0b;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 25px #ffd12f20;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.contact-call svg {
+  flex-shrink: 0;
+}
+
+.contact-call:hover {
+  background: #ffe06a;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px #ffd12f35;
+}
+
+.contact-call:active {
+  transform: scale(0.97);
+}
+
+/* Ադմինիստրատորի աղյուսակ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #303840;
+}
+
+th {
+  color: var(--y);
+  font-size: 12px;
+}
+
+td {
+  font-size: 13px;
+}
+
+/* Ստորին հատված */
+
+footer {
+  padding: 30px 7%;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  border-top: 1px solid #2a3036;
+}
+
+footer p {
+  color: var(--muted);
+  font-size: 12px;
+  flex: 1;
+}
+
+footer > a:not(.brand) {
+  color: var(--y);
+  font-size: 12px;
+}
+
+footer small {
+  width: 100%;
+  color: #777;
+  font-size: 10px;
+}
+
+/* Планшеты */
+
+@media (max-width: 850px) {
+  nav {
+    gap: 14px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact {
+    gap: 25px;
+  }
+}
+
+/* Мобильные устройства */
+
+@media (max-width: 620px) {
+  header {
+    min-height: 68px;
+    padding: 0 5%;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  #menu {
+    display: block;
+    background: none;
+    border: 0;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: #0b0e11;
+    padding: 22px;
+    flex-direction: column;
+    border-bottom: 1px solid #ffffff18;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .call {
+    display: none;
+  }
+
+  .hero {
+    padding: 60px 6%;
+    min-height: 660px;
+    background-position: 58%;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+    letter-spacing: -1px;
+  }
+
+  .stats {
+    gap: 13px;
+    flex-wrap: wrap;
+  }
+
+  .stats b {
+    font-size: 11px;
+  }
+
+  .section {
+    padding: 60px 6%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about-img {
+    min-height: 260px;
+  }
+
+  .about > div + div {
+    padding: 40px 6%;
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  form {
+    padding: 22px 18px;
+  }
+
+  .contact-call {
+    padding: 14px 20px;
+  }
+
+  footer {
+    padding: 28px 6%;
+  }
+
+  footer p {
+    flex-basis: 100%;
+  }
+}
+
+/* Նվազեցված անիմացիաների կարգավորում */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
